@@ -8,6 +8,21 @@ const timer = {
 
 let interval;
 
+document.addEventListener('DOMContentLoaded', () => {
+    switchMode('pomodoro');
+  });
+
+//When main button clicked, start timer
+const mainButton = document.getElementById('js-btn');
+mainButton.addEventListener('click', () => {
+  const { action } = mainButton.dataset;
+  if (action === 'start') {
+    startTimer();
+  } else {
+      stopTimer();
+  }
+});
+
 //Listener for mode buttons to be clicked
 const modeButtons = document.querySelector('#js-mode-buttons');
 modeButtons.addEventListener('click', handleMode);
@@ -17,6 +32,7 @@ function handleMode(event){
     const {mode} = event.target.dataset;
     if(!mode) return;
     switchMode(mode);
+    stopTimer();
 }
 
 function switchMode(mode) {
@@ -63,6 +79,7 @@ function switchMode(mode) {
         timer.sessions++;
     }
 
+    //Start button.
     mainButton.dataset.action = 'stop';
     mainButton.textContent = 'stop';
     mainButton.classList.add('active');
@@ -88,6 +105,16 @@ function switchMode(mode) {
         startTimer();
       }
     }, 1000);
+  }
+
+
+  //Stop the timer.
+  function stopTimer() {
+    clearInterval(interval);
+  
+    mainButton.dataset.action = 'start';
+    mainButton.textContent = 'start';
+    mainButton.classList.remove('active');
   }
 
 
