@@ -1,41 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Comforter+Brush&family=Licorice&display=swap');
+
 html {
     box-sizing: border-box;
-}
-
-*, *::before, *::after {
+  }
+  
+  *, *::before, *::after {
     box-sizing: inherit;
     margin: 0;
     padding: 0;
   }
-
+  
   :root {
-    --pomodoro: hsl(44, 100%, 93%);
+    --pomodoro: hsl(43, 56%, 94%);
     --shortBreak: hsl(130, 100%, 96%);
     --longBreak: hsl(350, 100%, 98%);
   }
-
+  
+  .title {
+      text-align: center;
+      margin-top: 3rem;
+      font-size: 6rem;
+      font-family: 'Licorice', cursive;
+      color: #bd476a;
+  }
+  
   body {
     background-color: var(--pomodoro);
     transition: background-color 1s ease;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     user-select: none;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+  }
+
+  .progress-bar {
+    text-align: center;
   }
 
   progress {
-    border-radius: 20px;
-    margin: 5rem;
+    border-radius: 2px;
     width: 80%;
-    height: 20px;
-    position: fixed;
+    height: 12px;
   }
-
+  
   progress::-webkit-progress-bar {
-    background-color: rgba(0, 0, 0, 0.1);;
-   }
-
-    progress::-webkit-progress-value {
+   background-color: rgba(0, 0, 0, 0.1);;
+  }
+  
+  progress::-webkit-progress-value {
     background-color: #fff;
   }
-
-
+  
+  .timer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .clock {
+    margin-top: 50px;
+    margin-bottom: 30px;
+    font-size: 15rem;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    font-family: arial, sans-serif;
+    color:rgb(54, 33, 1);
+  }
+  
+  .mode-button {
+    font-size: 16px;
+    height: 28px;
+    cursor: pointer;
+    box-shadow: none;
+    font-weight: 300;
+    color:darkgrey;
+    background-color: #fff;
+    border: 1px solid transparent;
+    margin: 0px;
+    border-radius: 4px;
+    padding: 2px 12px;
+    border-color: lavender;
+  }
+  
+  .mode-button.active {
+    border-color:rgb(54, 33, 1);
+  }
+  
   
