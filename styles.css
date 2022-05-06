@@ -61,7 +61,7 @@ html {
   .clock {
     margin-top: 50px;
     margin-bottom: 30px;
-    font-size: 15rem;
+    font-size: 13rem;
     line-height: 1;
     display: flex;
     align-items: center;
@@ -88,4 +88,41 @@ html {
     border-color:rgb(54, 33, 1);
   }
   
+  .main-button {
+    cursor: pointer;
+    box-shadow: rgb(235, 235, 235) 0px 6px 0px;
+    font-size: 22px;
+    height: 55px;
+    text-transform: uppercase;
+    color: #bd476a;
+    font-weight: bold;
+    width: 200px;
+    background-color: white;
+    border-width: initial;
+    border-style: none;
+    margin: 20px 0px 0px;
+    padding: 0px 12px;
+    border-radius: 4px;
+    transition: color 0.5s ease-in-out 0s;
+  }
+  
+  button:focus, button:active {
+    outline: none;
+  }
+  
+  .main-button.active {
+    transform: translateY(6px);
+    box-shadow: none;
+    outline: none;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  @media screen and (max-width: 550px) {
+    .clock {
+      font-size: 8rem;
+    }
+  }
   
