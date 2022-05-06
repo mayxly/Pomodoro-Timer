@@ -1,0 +1,41 @@
+html {
+    box-sizing: border-box;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+  }
+
+  :root {
+    --pomodoro: hsl(44, 100%, 93%);
+    --shortBreak: hsl(130, 100%, 96%);
+    --longBreak: hsl(350, 100%, 98%);
+  }
+
+  body {
+    background-color: var(--pomodoro);
+    transition: background-color 1s ease;
+    user-select: none;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+  }
+
+  progress {
+    border-radius: 20px;
+    margin: 5rem;
+    width: 80%;
+    height: 20px;
+    position: fixed;
+  }
+
+  progress::-webkit-progress-bar {
+    background-color: rgba(0, 0, 0, 0.1);;
+   }
+
+    progress::-webkit-progress-value {
+    background-color: #fff;
+  }
+
+
+  
