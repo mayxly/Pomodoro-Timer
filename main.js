@@ -90,7 +90,7 @@ function switchMode(mode) {
     interval = setInterval(function() {
       timer.remainingTime = getRemainingTime(endTime);
       updateClock();
-  
+
       //Change modes when timer ends.
       total = timer.remainingTime.total;
       if (total <= 0) {
@@ -105,6 +105,7 @@ function switchMode(mode) {
         else {
             switchMode('pomodoro');
         }
+        document.querySelector(`[data-sound="${timer.mode}"]`).play();
         startTimer();
       }
     }, 1000);
